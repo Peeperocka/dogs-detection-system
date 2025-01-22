@@ -35,6 +35,7 @@ MANIFEST
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
+dog_detector.log
 
 # Unit test / coverage reports
 htmlcov/
