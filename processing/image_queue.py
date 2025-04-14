@@ -1,6 +1,4 @@
-# image_queue.py
 import queue
-
 import config
 
 

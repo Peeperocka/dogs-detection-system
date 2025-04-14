@@ -2,7 +2,8 @@ from utils.logger import logger
 
 
 class Response:
-    def handle_pack(self, clusters):
+    @staticmethod
+    def handle_pack(clusters):
         if clusters:
             pack_sizes = [len(cluster) for cluster in clusters if cluster]
             if pack_sizes:

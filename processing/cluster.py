@@ -1,6 +1,7 @@
-from sklearn.cluster import DBSCAN
 import numpy as np
 import config
+
+from sklearn.cluster import DBSCAN
 
 
 class Cluster:
@@ -20,8 +21,8 @@ class Cluster:
             center_y = (y1 + y2) / 2
             centers.append([center_x, center_y])
 
-        eps_pixels = image_height * self.eps_fraction  # Calculate EPS in pixels
-        dbscan = DBSCAN(eps=eps_pixels, min_samples=self.min_samples)  # Use pixel EPS
+        eps_pixels = image_height * self.eps_fraction
+        dbscan = DBSCAN(eps=eps_pixels, min_samples=self.min_samples)
         clusters = dbscan.fit_predict(np.array(centers))
 
         clustered_detections = [[] for _ in range(max(clusters) + 1)]
