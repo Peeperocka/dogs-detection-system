@@ -38,7 +38,8 @@ class AsyncImageProcessor:
         while True:
             try:
                 folder_path = "input_images"
-                await self.async_file_operations(os.makedirs, folder_path, exist_ok=True)
+                if not os.path.exists(folder_path):
+                    await self.async_file_operations(os.makedirs, folder_path)
 
                 files = await self.async_file_operations(os.listdir, folder_path)
                 images_to_add = []
